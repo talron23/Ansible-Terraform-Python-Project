@@ -1,0 +1,142 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font styles */
+body {
+    background-color: #222;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+/* Style the header */
+.header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the title */
+.title {
+    font-size: 24px;
+}
+
+/* Center the content container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #3f3f57;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Style the zodiac signs grid */
+.zodiac-signs {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+}
+
+.zodiac-sign {
+    text-align: center;
+    flex: 1;
+}
+
+.zodiac-sign img {
+    max-width: 100px;
+    border: none;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.zodiac-sign h3 {
+    font-size: 18px;
+}
+
+/* Style the horoscope form */
+.horoscope-form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 24px; 
+    margin-top: 10px;
+    font-family: 'Creepster', cursive;
+    width: 100%; 
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #212121;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the horoscope result section */
+.horoscope-result {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#horoscope-text {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #919090;
+    border-radius: 5px;
+    background-color: #3f3c3c;
+}
+
+.divider {
+    margin-top: 20px; /* Adjust the margin-top value to control the spacing */
+    border-top: 1px solid #ccc; /* Add a horizontal line */
+    opacity: 0.5; /* Adjust the opacity to control the visibility */
+}
+
+.starry-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Horoscope App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Daily Horoscope App</h1>
+    </header>
+    <div class="starry-background"></div>
+    <div class="container">
+        <div class="zodiac-signs">
+            <div class="zodiac-sign">
+                <img src="/static/pictures/aries.png" alt="Aries">
+                <h3>Aries</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/taurus.png" alt="Taurus">
+                <h3>Taurus</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/gemini.png" alt="Gemini">
+                <h3>Gemini</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/cancer.png" alt="Cancer">
+                <h3>Cancer</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/leo.png" alt="Leo">
+                <h3>Leo</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/virgo.png" alt="Virgo">
+                <h3>Virgo</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/libra.png" alt="Libra">
+                <h3>Libra</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/scorpio.png" alt="Scorpio">
+                <h3>Scorpio</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/sagittarius.png" alt="Sagittarius">
+                <h3>Sagittarius</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/capricorn.png" alt="Capricorn">
+                <h3>Capricorn</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/aquarius.png" alt="Aquarius">
+                <h3>Aquarius</h3>
+            </div>
+            <div class="zodiac-sign">
+                <img src="/static/pictures/pisces.png" alt="Pisces">
+                <h3>Pisces</h3>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="horoscope-form">
+            <label for="zodiac-sign">Select your zodiac sign:</label>
+            <select id="zodiac-sign">
+                <option value="aries">Aries</option>
+                <option value="taurus">Taurus</option>
+                <option value="gemini">Gemini</option>
+                <option value="cancer">Cancer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Scorpio</option>
+                <option value="sagittarius">Sagittarius</option>
+                <option value="capricorn">Capricorn</option>
+                <option value="aquarius">Aquarius</option>
+                <option value="pisces">Pisces</option>
+            </select>
+            <button id="get-horoscope">Get Horoscope</button>
+        </div>
+        <div class="horoscope-result">
+            <h2>Your Daily Horoscope</h2>
+            <p id="horoscope-text"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const getHoroscopeButton = document.getElementById('get-horoscope');
+            const zodiacSignSelect = document.getElementById('zodiac-sign');
+            const horoscopeText = document.getElementById('horoscope-text');
+
+            getHoroscopeButton.addEventListener('click', function () {
+                const selectedZodiacSign = zodiacSignSelect.value;
+                const apiUrl = 'http://127.0.0.1:5500/get_horoscope?sign=' + selectedZodiacSign;
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        horoscopeText.textContent = data.horoscope;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching horoscope:', error);
+                        horoscopeText.textContent = 'Failed to fetch horoscope. Please try again later.';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
