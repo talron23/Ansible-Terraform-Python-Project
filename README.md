@@ -26,7 +26,7 @@ Using multiple technologies and all within the same terraform workflow - Python,
 - **Infrastructure as Code**: Terraform is employed to manage the cloud infrastructure. It automates the provisioning of AWS resources, including the EC2 instance where the Flask app and Nginx are deployed, as well as security groups for network access. The goal is to showcase the power of infrastructure automation and make deployment a breeze.
 
 ### Ansible
-- **Configuration Management**: Ansible is used for automated configuration management and application deployment. It ensures that the Flask app is correctly configured, and it manages the deployment of the application code.
+- **Configuration Management**: Ansible is used for automated configuration management and application deployment. The ansible control host is provisioned through terraform, and the ansible playbook is being executed also through terraform, completing the end-to-end automation cycle. 
 
 ### AWS
 - **Cloud Hosting**: The project leverages Amazon Web Services (AWS) for cloud hosting. AWS provides scalable, reliable, and secure infrastructure for deploying the web application. 
