@@ -6,7 +6,7 @@ The project is a Daily Horoscope web application that offers horoscope readings 
 
 Key management, such as the generation and assignment of SSH keys to EC2 instances, is effortlessly handled within the same Terraform workflow. This end-to-end automation eliminates manual intervention, minimizes errors, and significantly accelerates the deployment cycle.
 
-Using multiple technologies and all within the same terraform workflow - Python, Nginx and Flask, the result is a web application deployed on AWS that delivers daily horoscope reading, all thanks to the power of Terraform with one click of # terraform apply.
+Using multiple technologies and all within the same terraform workflow - Python, Nginx and Flask, the result is a web application deployed on AWS that delivers daily horoscope reading, all thanks to the power of Terraform with the simplicity of a single command: # terraform apply.
 
 
 ## Project Components
