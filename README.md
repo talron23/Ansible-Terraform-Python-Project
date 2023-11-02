@@ -67,10 +67,10 @@ To quickly get started with the Daily Horoscope App, you'll need to have Terrafo
    cd Ansible-Terraform-Python-Project
 
 4. **Initialize Terraform**:
-   # terraform init
+   terraform init
 
 5. **Configure AWS Credentials**:
-   # terraform apply
+   terraform apply
 
 6. **Access the Web Application**:
    After the Terraform deployment is complete, you will receive information about the resources created, including the public IP address of the EC2 instance. You can access the web application by entering the EC2 instance's IP address in your web browser.
