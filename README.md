@@ -2,9 +2,7 @@
 
 ## Overview
 
-The project is a Daily Horoscope web application that offers horoscope readings based on users' zodiac signs. What sets this project apart is the profound automation achieved through Terraform.
-
-Every aspect of the application's deployment, from creating AWS resources, including the web server, to dynamically provisioning Ansible control host, is seamlessly automated with Terraform code.
+The project is a Daily Horoscope web application that offers horoscope readings based on users' zodiac signs. What sets this project apart is the profound automation achieved through Terraform. Every aspect of the application's deployment, from creating AWS resources, including the web server, to dynamically provisioning Ansible control host, is seamlessly automated with Terraform code.
 
 Key management, such as the generation and assignment of SSH keys to EC2 instances, is effortlessly handled within the same Terraform workflow. This end-to-end automation eliminates manual intervention, minimizes errors, and significantly accelerates the deployment cycle.
 
@@ -67,14 +65,16 @@ To quickly get started with the Daily Horoscope App, you'll need to have Terrafo
    cd Ansible-Terraform-Python-Project
 
 4. **Initialize Terraform**:
+   ```bash
    terraform init
 
-5. **Configure AWS Credentials**:
+6. **Configure AWS Credentials**:
+   ```bash
    terraform apply
 
-6. **Access the Web Application**:
+8. **Access the Web Application**:
    After the Terraform deployment is complete, you will receive information about the resources created, including the public IP address of the EC2 instance. You can access the web application by entering the EC2 instance's IP address in your web browser.
 
 
 ## Contact
-For questions or feedback, please contact me at [tal00ron@gmail.com].
+For questions or feedback, please contact me at tal00ron@gmail.com.
