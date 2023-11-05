@@ -26,16 +26,16 @@ resource "aws_instance" "ansible_control" {
 
 
   provisioner "local-exec" {
-    command = "sleep 30 && scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no tf.key ubuntu@${aws_instance.ansible_control.public_ip}:/home/ubuntu/tf.key"
+    command = "sleep 30 && scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no tf.key ubuntu@${self.public_ip}:/home/ubuntu/tf.key"
 }
   provisioner "local-exec" {
-    command = "scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no hosts.ini ubuntu@${aws_instance.ansible_control.public_ip}:/home/ubuntu/hosts.ini"
+    command = "scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no hosts.ini ubuntu@${self.public_ip}:/home/ubuntu/hosts.ini"
 }
   provisioner "local-exec" {
-    command = "scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no ../ansible/playbooks/main.yml ubuntu@${aws_instance.ansible_control.public_ip}:/home/ubuntu/main.yml"
+    command = "scp -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no ../ansible/playbooks/main.yml ubuntu@${self.public_ip}:/home/ubuntu/main.yml"
 }
   provisioner "local-exec" {
-    command = "scp -r -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no ../application-code/ ubuntu@${aws_instance.ansible_control.public_ip}:/home/ubuntu/"
+    command = "scp -r -i ${local_file.TF-key.filename} -o StrictHostKeyChecking=no ../application-code/ ubuntu@${self.public_ip}:/home/ubuntu/"
 }
 
   provisioner "remote-exec" {
@@ -126,8 +126,4 @@ resource "local_file" "ec2_public_ip_file" {
 
 output "instance_public_ip" {
   value = aws_instance.web.public_ip
-}
-
-output "instance_ansible_public_ip" {
-  value = aws_instance.ansible_control.public_ip
 }
