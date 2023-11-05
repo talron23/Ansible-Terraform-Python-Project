@@ -68,7 +68,7 @@ To quickly get started with the Daily Horoscope App, you'll need to have Terrafo
    ```bash
    terraform init
 
-6. **Configure AWS Credentials**:
+6. **Run Terraform**:
    ```bash
    terraform apply
 
