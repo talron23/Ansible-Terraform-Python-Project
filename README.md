@@ -8,6 +8,8 @@ Key management, such as the generation and assignment of SSH keys to EC2 instanc
 
 Using multiple technologies and all within the same terraform workflow - Python, Nginx and Flask, the result is a web application deployed on AWS that delivers daily horoscope reading, all thanks to the power of Terraform with the simplicity of a single command: # terraform apply.
 
+Uncover my thrilling journey of making this project, here, in this medium blog post:
+[Unleashing Terraform Magic](https://medium.com/@tal00ron/terraform-unleashed-from-provisioning-to-configuration-d71107585388)
 
 ## Project Components
 
